@@ -1,4 +1,4 @@
-# Sistema de Hospital - Ficha de Entrada 
+# Sistema de Hospital - Ficha de Entrada do paciente
 
 import datetime
 
