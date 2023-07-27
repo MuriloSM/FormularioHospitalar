@@ -1,6 +1,11 @@
 # Sistema de Hospital - Ficha de Entrada do paciente
 
 import datetime
+import csv
+
+#dicionario para guardar dados de paciente:
+
+dados_pacientes = {}
 
 #looping para cadastrar um novo paciente
 
@@ -19,6 +24,15 @@ while resposta == 'SIM':
 
     hora_atual = datetime.datetime.now()
     hora_formatada = hora_atual.strftime("%Y-%m-%d %H:%M:%S")
+
+    #salvando dados inseridos:
+
+    dados_pacientes[nome] = {
+        'Idade': idade,
+        'Telefone': telefone,
+        'Doença Infectocontagiosa': doenca_infectocontagiosa,
+        'Data de entrada': hora_formatada
+    }
 
 # Ficha (resposta ao usuario dos dados inseridos) 
 
@@ -41,7 +55,24 @@ while resposta == 'SIM':
         else:
             print('NAO deve direcionado para a sala de espera reservada.')
     print('===========================================================')
-    resposta = input('Digite SIM para um novo cadastro: ').upper()
+
+    #salvando dados:
+    resposta = input('Digite SIM para um novo cadastro ou S salvar dados: ').upper()
+    if resposta == 'S':
+        nome_arquivo_csv = 'dados_pacientes.csv'
+        with open(nome_arquivo_csv, 'w', newline='') as arquivo_csv:
+            writer = csv.writer(arquivo_csv)
+            header = ['Nome', 'Idade', 'Telefone', 'Doença Infectocontagiosa', 'Data de Entrada']
+            writer.writerow(header)
+            for nome, dados in dados_pacientes.items():
+                idade = dados['Idade']
+                telefone = dados['Telefone']
+                doenca_infectocontagiosa = dados['Doença Infectocontagiosa']
+                data_entrada = dados['Data de entrada']
+                writer.writerow([nome, idade, telefone, doenca_infectocontagiosa, data_entrada])
+
+   
+
 
 
 
