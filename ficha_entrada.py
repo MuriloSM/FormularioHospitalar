@@ -70,6 +70,7 @@ while resposta == 'SIM':
                 doenca_infectocontagiosa = dados['Doença Infectocontagiosa']
                 data_entrada = dados['Data de entrada']
                 writer.writerow([nome, idade, telefone, doenca_infectocontagiosa, data_entrada])
+        import menu
 
    
 
