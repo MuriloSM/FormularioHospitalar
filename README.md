@@ -14,9 +14,11 @@ O arquivo principal do projeto é o "menu.py". Ele contém o menu que permite ao
 
 - "ficha_entrada.py": Contém funcionalidades para cadastrar um novo paciente.
 
+- Ao cadastrar o primeiro paciente será gerado o arquivo "dados_pacientes.csv", onde consta os dados salvos como; Nome, 
+
 ## Como Executar
 
 Para executar o projeto, você precisará ter o Python instalado em sua máquina. Abra o terminal e navegue até a pasta do projeto. Em seguida, digite o seguinte comando:
 
 ```bash
-python menu.py
+python main.py

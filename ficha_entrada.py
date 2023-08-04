@@ -60,7 +60,7 @@ while resposta == 'SIM':
     resposta = input('Digite SIM para um novo cadastro ou S salvar dados: ').upper()
     if resposta == 'S':
         nome_arquivo_csv = 'dados_pacientes.csv'
-        with open(nome_arquivo_csv, 'w', newline='') as arquivo_csv:
+        with open(nome_arquivo_csv, 'a', newline='') as arquivo_csv:
             writer = csv.writer(arquivo_csv)
             header = ['Nome', 'Idade', 'Telefone', 'Doença Infectocontagiosa', 'Data de Entrada']
             writer.writerow(header)
@@ -70,20 +70,4 @@ while resposta == 'SIM':
                 doenca_infectocontagiosa = dados['Doença Infectocontagiosa']
                 data_entrada = dados['Data de entrada']
                 writer.writerow([nome, idade, telefone, doenca_infectocontagiosa, data_entrada])
-        import menu
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                print('Dados salvos com sucesso de: ', nome, '\n ')
